@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accounts-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: accounts
+  template:
+    metadata:
+      labels:
+        app: accounts
+    spec:
+      containers:
+      - name: accounts
+        image: dishathakur1625-cpu/accounts-service:latest
+        ports:
+        - containerPort: 8080
+
+---
+NAME                              READY   STATUS    RESTARTS   AGE
+accounts-service-6d9f4b5c4d-abcde   2/2     Running   0          3m
+
+---
+NAME                        TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/accounts-service   LoadBalancer   10.96.0.12    <pending>    80:32123/TCP   3m
