@@ -1,0 +1,13 @@
+curl -X PUT http://localhost:8080/accounts/1 \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Alice Updated", "email": "alice.updated@example.com", "balance": 1500}'
+
+Response:
+{
+  "id": 1,
+  "name": "Alice Updated",
+  "email": "alice.updated@example.com",
+  "balance": 1500
+}
+
+HTTP/1.1 200 OK
