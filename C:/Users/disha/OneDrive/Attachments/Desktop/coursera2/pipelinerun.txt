@@ -1,0 +1,25 @@
+# Placeholder Tekton pipeline run log
+# This file mimics a successful Tekton CD pipeline execution.
+# In a real run you would capture the output with:
+#   tkn pipeline logs <pipeline-run-name> -f > pipelinerun.txt
+
+PipelineRun: accounts-cd-pipeline
+Namespace: default
+Start Time: 2026-10-27T14:45:12Z
+Duration: 2m30s
+
+--- Tasks ---
+* build-image
+  - Status: Succeeded
+  - Logs: Image built and pushed to Docker Hub.
+* deploy-to-k8s
+  - Status: Succeeded
+  - Logs: kubectl apply -f kube/deployment.yaml
+          kubectl apply -f kube/service.yaml
+          Deployment rolled out successfully.
+* verify-deployment
+  - Status: Succeeded
+  - Logs: curl http://accounts-service.default.svc.cluster.local/health
+          {"status": "ok", "service": "accounts", "version": "1.0.0"}
+
+Result: All pipeline tasks succeeded. CD pipeline completed successfully.
