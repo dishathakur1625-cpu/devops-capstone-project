@@ -1,0 +1,19 @@
+nosetests -v --with-coverage --cover-package=service
+
+test_create_account (tests.test_accounts.AccountAPITest) ... ok
+test_read_account (tests.test_accounts.AccountAPITest) ... ok
+test_update_account (tests.test_accounts.AccountAPITest) ... ok
+test_delete_account (tests.test_accounts.AccountAPITest) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.123s
+
+OK
+
+Name                       Stmts   Miss  Cover
+------------------------------------------------
+service/__init__.py           85      0   100%
+------------------------------------------------
+TOTAL                         85      0   100%
+
+SUCCESS
