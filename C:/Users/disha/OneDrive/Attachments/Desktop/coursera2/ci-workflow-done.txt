@@ -1,0 +1,55 @@
+
+--- GitHub Actions CI Run (Mock) -------------------------------------------
+Run actions/checkout@v4
+  Checking out the repository...
+  Completed with success.
+
+Run actions/setup-python@v5
+  Setting up Python 3.11...
+  Completed with success.
+
+Run pip install -r requirements.txt
+  Collecting flask==2.2.5
+  Collecting flask-talisman==1.1.0
+  Collecting flask-cors==3.0.10
+  Collecting nose==1.3.7
+  Collecting coverage==7.5.0
+  Collecting flake8==7.0.0
+  Collecting pylint==3.0.3
+  Successfully installed ...
+  Completed with success.
+
+Run flake8 service tests
+  
+  No linting errors found.
+  Completed with success.
+
+Run pylint service tests
+  
+  Your code has been rated at 10.00/10
+  Completed with success.
+
+Run nosetests -v --with-coverage --cover-package=service
+  
+  test_create_account (tests.test_accounts.AccountAPITest) ... ok
+  test_read_account (tests.test_accounts.AccountAPITest) ... ok
+  test_update_account (tests.test_accounts.AccountAPITest) ... ok
+  test_delete_account (tests.test_accounts.AccountAPITest) ... ok
+  
+  ----------------------------------------------------------------------
+  Ran 4 tests in 0.123s
+
+  OK
+  
+  Name                       Stmts   Miss  Cover
+  ------------------------------------------------
+  service/__init__.py           85      0   100%
+  ------------------------------------------------
+  TOTAL                         85      0   100%
+  
+  ----------------------------------------------------------------------
+  SUCCESS
+
+Job succeeded
+
+--- End of CI Run ----------------------------------------------------------
